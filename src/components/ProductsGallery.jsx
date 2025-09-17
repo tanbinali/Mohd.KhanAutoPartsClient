@@ -2,16 +2,24 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiZoomIn, FiX } from "react-icons/fi";
 
-// Dynamically import all battery images from assets/batteries
-const images = import.meta.glob("../assets/batteries/*.{jpg,jpeg,png,webp}", {
-  eager: true,
-});
+// ✅ Import all images dynamically
+const importAllBatteries = import.meta.glob(
+  "../assets/batteries/*.{jpg,jpeg,png,webp}",
+  { eager: true, as: "url" }
+);
 
-const batteries = Object.values(images).map((img) => ({
-  src: img.default,
-  alt: img.default.split("/").pop(),
-  caption: img.default.split("/").pop(),
-}));
+// ✅ Convert filenames to readable captions
+const batteries = Object.values(importAllBatteries).map((src) => {
+  const fileName = src.split("/").pop().split(".")[0]; // remove extension
+  const caption = fileName
+    .replace(/[-_]/g, " ") // replace dash/underscore with space
+    .replace(/\b\w/g, (c) => c.toUpperCase()); // capitalize first letters
+  return {
+    src,
+    alt: caption,
+    caption,
+  };
+});
 
 const ProductsGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -49,12 +57,12 @@ const ProductsGallery = () => {
             Car Battery Gallery – Abu Dhabi
           </h2>
           <p className="text-lg text-base-content/80 max-w-2xl mx-auto">
-            Browse our range of durable car batteries available for on-site
-            replacement with full warranty.
+            Browse all car batteries available for on-site replacement with full
+            warranty.
           </p>
         </motion.div>
 
-        {/* Masonry Image Gallery */}
+        {/* Masonry Gallery */}
         <motion.div
           className="columns-2 sm:columns-2 md:columns-3 gap-6 space-y-6"
           variants={containerVariants}
@@ -84,7 +92,6 @@ const ProductsGallery = () => {
                   <FiZoomIn className="w-8 h-8 text-white" />
                 </div>
               </div>
-              {/* Badge Caption */}
               <div className="absolute bottom-3 left-3 bg-primary/80 text-white text-xs px-2 py-1 rounded-lg">
                 {img.caption}
               </div>
@@ -93,7 +100,7 @@ const ProductsGallery = () => {
         </motion.div>
       </div>
 
-      {/* Modal for Enlarged Image */}
+      {/* Modal */}
       {selectedImage && (
         <motion.div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
@@ -109,7 +116,7 @@ const ProductsGallery = () => {
             transition={{ duration: 0.3 }}
           >
             <img
-              src={selectedImage.src + "?w=500&format=webp"}
+              src={selectedImage.src}
               alt={selectedImage.alt}
               loading="lazy"
               className="max-w-full max-h-full object-contain rounded-lg"
