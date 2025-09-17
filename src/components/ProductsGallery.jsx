@@ -1,21 +1,66 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FiZoomIn, FiX } from "react-icons/fi";
+import {
+  FiBattery,
+  FiTruck,
+  FiTool,
+  FiShield,
+  FiZoomIn,
+  FiX,
+} from "react-icons/fi";
 
-// ✅ Import all images dynamically
-const importAllBatteries = import.meta.glob(
-  "../assets/batteries/*.{jpg,jpeg,png,webp}",
-  { eager: true, as: "url" }
-);
+// ✅ On-call car battery services
+const services = [
+  {
+    title: "Emergency Battery Replacement",
+    description:
+      "Fast car battery replacement at your location within minutes in Abu Dhabi & Mussafah.",
+    icon: <FiBattery className="w-8 h-8" />,
+    color: "bg-blue-500/10 text-blue-600",
+  },
+  {
+    title: "24/7 Roadside Assistance",
+    description:
+      "Stranded with a dead battery? Our experts will arrive anywhere in Abu Dhabi for jumpstarts or battery replacement.",
+    icon: <FiTruck className="w-8 h-8" />,
+    color: "bg-green-500/10 text-green-600",
+  },
+  {
+    title: "Battery Delivery & Installation",
+    description:
+      "Get your battery delivered and installed at your home, office, or roadside by certified technicians.",
+    icon: <FiTool className="w-8 h-8" />,
+    color: "bg-orange-500/10 text-orange-600",
+  },
+  {
+    title: "Battery Health Check & Warranty",
+    description:
+      "Free battery health check and warranty-backed batteries for complete peace of mind.",
+    icon: <FiShield className="w-8 h-8" />,
+    color: "bg-purple-500/10 text-purple-600",
+  },
+];
 
-// ✅ Convert filenames to readable captions
-const batteries = Object.values(importAllBatteries).map((src) => {
-  const fileName = src.split("/").pop().split(".")[0]; // remove extension
-  const caption = fileName
-    .replace(/[-_]/g, " ") // replace dash/underscore with space
-    .replace(/\b\w/g, (c) => c.toUpperCase()); // capitalize first letters
+// ✅ List all your battery image filenames here (public/assets/batteries/)
+const batteryImageFiles = [
+  "Amaron-din661.jpg",
+  "FIAMM-Titanium-Pro-L2X-64P_enl.jpg",
+  "PLATINUM 55530.jpg",
+  "SEBANG.png",
+  "tuflong-battery-_1_.jpg",
+  "VARTA AGM.png",
+  "VARTA Blue.png",
+  "VARTA Dynamic SLI.png",
+];
+
+// Map them to a gallery-friendly format
+const productImages = batteryImageFiles.map((file) => {
+  const caption = file
+    .replace(/\.[^/.]+$/, "") // remove extension
+    .replace(/[-_]/g, " ") // replace - and _ with space
+    .replace(/\b\w/g, (c) => c.toUpperCase()); // capitalize each word
   return {
-    src,
+    src: `/assets/batteries/${file}`, // public folder path
     alt: caption,
     caption,
   };
@@ -32,6 +77,13 @@ const ProductsGallery = () => {
     },
   };
 
+  const cardVariants = {
+    rest: { y: 0, opacity: 1, scale: 1 },
+    hover: { y: -8, scale: 1.02, transition: { duration: 0.3 } },
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
+  };
+
   const imageVariants = {
     rest: { scale: 1, opacity: 1, y: 0 },
     hover: { scale: 1.05, transition: { duration: 0.3 } },
@@ -44,33 +96,87 @@ const ProductsGallery = () => {
       id="products"
       className="py-20 md:py-28 bg-base-100 relative overflow-hidden"
     >
+      {/* Decorative Backgrounds */}
+      <div className="absolute top-0 left-0 w-full h-72 bg-gradient-to-b from-primary/5 to-transparent -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full -translate-x-1/4 translate-y-1/2 -z-10"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-primary mb-4">
+            On-Call Car Battery Services in Abu Dhabi
+          </h2>
+          <p className="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto">
+            Quick and reliable battery replacement, delivery, and roadside
+            support across Mussafah & Abu Dhabi. 24/7 service with warranty.
+          </p>
+        </motion.div>
+
+        {/* Service Cards */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {services.map((service, index) => (
+            <motion.article
+              key={index}
+              className="bg-base-100 rounded-2xl p-6 text-center border border-base-300/30 shadow-sm hover:shadow-lg transition-all duration-300 group"
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <div
+                className={`p-4 rounded-2xl ${service.color} mb-5 inline-flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+              >
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-secondary mb-3 group-hover:text-primary transition-colors duration-300">
+                {service.title}
+              </h3>
+              <p className="text-base text-base-content/80">
+                {service.description}
+              </p>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        {/* Product Gallery */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
             Car Battery Gallery – Abu Dhabi
           </h2>
           <p className="text-lg text-base-content/80 max-w-2xl mx-auto">
-            Browse all car batteries available for on-site replacement with full
-            warranty.
+            Browse durable car batteries available for on-site replacement with
+            full warranty.
           </p>
         </motion.div>
 
-        {/* Masonry Gallery */}
+        {/* Masonry Image Gallery */}
         <motion.div
           className="columns-2 sm:columns-2 md:columns-3 gap-6 space-y-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
         >
-          {batteries.map((img, index) => (
+          {productImages.map((img, index) => (
             <motion.figure
               key={index}
               className="break-inside-avoid rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group relative cursor-pointer"
@@ -78,7 +184,7 @@ const ProductsGallery = () => {
               initial="hidden"
               whileInView="visible"
               whileHover="hover"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               onClick={() => setSelectedImage(img)}
             >
               <img
@@ -92,6 +198,7 @@ const ProductsGallery = () => {
                   <FiZoomIn className="w-8 h-8 text-white" />
                 </div>
               </div>
+              {/* Badge Caption */}
               <div className="absolute bottom-3 left-3 bg-primary/80 text-white text-xs px-2 py-1 rounded-lg">
                 {img.caption}
               </div>
@@ -100,7 +207,7 @@ const ProductsGallery = () => {
         </motion.div>
       </div>
 
-      {/* Modal */}
+      {/* Modal for Enlarged Image */}
       {selectedImage && (
         <motion.div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
