@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import video from "../assets/hero-video.mp4";
-import { FiPhone } from "react-icons/fi";
+import {
+  FiClock,
+  FiDollarSign,
+  FiMap,
+  FiPhone,
+  FiShield,
+  FiTruck,
+} from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Hero = () => {
@@ -109,6 +116,37 @@ const Hero = () => {
             <FiPhone className="w-6 h-6" />
             Call Now
           </motion.a>
+        </motion.div>
+
+        {/* Additional info */}
+        <motion.div
+          className="mt-12 flex flex-wrap justify-center items-center gap-6 text-white/80"
+          variants={itemVariants}
+        >
+          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+            <FiClock className="w-6 h-6 text-accent" />
+            <span>24/7 Availability</span>
+          </span>
+
+          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+            <FiDollarSign className="w-6 h-6 text-accent" />
+            <span>Low Service Charges</span>
+          </span>
+
+          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+            <FiShield className="w-6 h-6 text-accent" />
+            <span>Warranty Provided</span>
+          </span>
+
+          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+            <FiTruck className="w-6 h-6 text-accent" />
+            <span>Fast Delivery</span>
+          </span>
+
+          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+            <FiMap className="w-6 h-6 text-accent" />
+            <span>Mussafah, M6, Abu Dhabi, UAE</span>
+          </span>
         </motion.div>
       </motion.div>
 
