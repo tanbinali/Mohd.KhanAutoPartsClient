@@ -41,7 +41,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen w-full overflow-visible"
+    >
       {/* Background Video */}
       <motion.div
         className="absolute inset-0"
@@ -118,65 +121,64 @@ const Hero = () => {
           </motion.a>
         </motion.div>
 
-        {/* Additional info */}
+        {/* Badges + Arrow */}
         <motion.div
-          className="mt-12 flex flex-wrap justify-center items-center gap-6 text-white/80"
+          className="mt-12 flex flex-col items-center gap-6 text-white/80 w-full"
           variants={itemVariants}
         >
-          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
-            <FiClock className="w-6 h-6 text-accent" />
-            <span>24/7 Availability</span>
-          </span>
+          {/* Badges */}
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+            <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+              <FiClock className="w-6 h-6 text-accent" />
+              <span>24/7 Availability</span>
+            </span>
+            <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+              <FiDollarSign className="w-6 h-6 text-accent" />
+              <span>Low Service Charges</span>
+            </span>
+            <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+              <FiShield className="w-6 h-6 text-accent" />
+              <span>Warranty Provided</span>
+            </span>
+            <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+              <FiTruck className="w-6 h-6 text-accent" />
+              <span>Fast Delivery</span>
+            </span>
+            <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+              <FiMap className="w-6 h-6 text-accent" />
+              <span>Mussafah, M6, Abu Dhabi, UAE</span>
+            </span>
+          </div>
 
-          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
-            <FiDollarSign className="w-6 h-6 text-accent" />
-            <span>Low Service Charges</span>
-          </span>
-
-          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
-            <FiShield className="w-6 h-6 text-accent" />
-            <span>Warranty Provided</span>
-          </span>
-
-          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
-            <FiTruck className="w-6 h-6 text-accent" />
-            <span>Fast Delivery</span>
-          </span>
-
-          <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
-            <FiMap className="w-6 h-6 text-accent" />
-            <span>Mussafah, M6, Abu Dhabi, UAE</span>
-          </span>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll Down Arrow */}
-      <motion.div
-        className="absolute bottom-10 w-full flex justify-center z-20"
-        variants={arrowVariants}
-        animate="animate"
-      >
-        <button
-          onClick={scrollToProducts}
-          className="text-white bg-accent bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 shadow-lg focus:outline-none"
-          aria-label="Scroll to our battery services section"
-        >
-          <motion.svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-10 h-10"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            whileHover={{ scale: 1.3 }}
+          {/* Scroll Arrow */}
+          <motion.div
+            className="flex justify-center mt-4 sm:mt-6"
+            variants={arrowVariants}
+            animate="animate"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </motion.svg>
-        </button>
+            <button
+              onClick={scrollToProducts}
+              className="text-white bg-accent bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 shadow-lg focus:outline-none"
+              aria-label="Scroll to our battery services section"
+            >
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-10 h-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                whileHover={{ scale: 1.3 }}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </motion.svg>
+            </button>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </section>
   );
