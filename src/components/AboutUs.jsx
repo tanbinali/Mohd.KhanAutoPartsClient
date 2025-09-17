@@ -3,11 +3,9 @@ import {
   FiZap,
   FiTruck,
   FiShield,
+  FiUsers,
   FiClock,
   FiMapPin,
-  FiUsers,
-  FiAward,
-  FiPhoneCall,
 } from "react-icons/fi";
 import banner from "../assets/Banner.png";
 
@@ -45,7 +43,7 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="about" className="py-15 bg-base-200 overflow-hidden">
+    <section id="about" className="py-20 bg-base-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -60,9 +58,10 @@ const AboutUs = () => {
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
           <p className="text-lg text-base-content/80 max-w-3xl mx-auto">
-            We specialize in <strong>online car battery replacement</strong>{" "}
-            services across Abu Dhabi – fast delivery, free installation, and
-            24/7 emergency support.
+            We specialize in <strong>on-site car battery assistance</strong>{" "}
+            across Abu Dhabi. Whether your car has a dead battery or needs a
+            replacement, simply call us. Our certified team will promptly reach
+            your location to provide fast and affordable service.
           </p>
         </motion.div>
 
@@ -77,12 +76,12 @@ const AboutUs = () => {
           >
             <img
               src={banner + "?w=500&format=webp"}
-              alt="Online car battery replacement Abu Dhabi - Mohd. Khan Auto Parts"
+              alt="On-site car battery assistance Abu Dhabi - Mohammad Khan Auto Parts"
               loading="lazy"
               className="rounded-xl shadow-2xl w-full object-cover"
             />
 
-            {/* Experience badge */}
+            {/* Experience Badge */}
             <motion.div
               className="absolute -bottom-4 -right-4 bg-primary text-primary-content p-6 rounded-xl shadow-lg"
               initial={{ scale: 0, rotate: -180 }}
@@ -109,25 +108,25 @@ const AboutUs = () => {
               className="text-3xl font-bold text-primary mb-6"
               variants={itemVariants}
             >
-              Abu Dhabi’s Trusted Car Battery Service
+              Abu Dhabi’s Trusted On-Site Battery Service
             </motion.h3>
 
             <motion.p
               className="text-base-content/80 mb-6 leading-relaxed"
               variants={itemVariants}
             >
-              At Mohd. Khan Auto Parts, we focus exclusively on car battery
-              solutions. From <strong>delivery & installation</strong> to{" "}
-              <strong>emergency jump-starts</strong>, our certified team ensures
-              your car gets back on the road quickly and safely.
+              At Mohammad Khan Auto Parts, we focus exclusively on car battery
+              solutions. From <strong>on-site replacements</strong> to{" "}
+              <strong>emergency jump-starts</strong>, our team ensures your car
+              gets back on the road quickly and safely.
             </motion.p>
 
             <motion.p
               className="text-base-content/80 mb-8 leading-relaxed"
               variants={itemVariants}
             >
-              We only provide genuine, warranty-backed batteries from trusted
-              brands. With fast response and 24/7 support, we’re the most
+              We only supply genuine, warranty-backed batteries from trusted
+              brands. With fast response and 24/7 availability, we’re the most
               reliable choice for drivers in Abu Dhabi.
             </motion.p>
 
@@ -146,7 +145,7 @@ const AboutUs = () => {
                 </span>
               </div>
               <div className="text-center p-4 bg-base-100 rounded-lg">
-                <FiAward className="text-3xl text-primary mx-auto mb-2" />
+                <FiClock className="text-3xl text-primary mx-auto mb-2" />
                 <span className="block text-2xl font-bold text-primary">
                   24/7
                 </span>
@@ -156,7 +155,7 @@ const AboutUs = () => {
               </div>
             </motion.div>
 
-            {/* What We Offer */}
+            {/* Services */}
             <motion.h4
               className="text-xl font-semibold text-primary mb-6"
               variants={itemVariants}
@@ -172,25 +171,26 @@ const AboutUs = () => {
                 {
                   icon: <FiZap className="text-2xl text-primary" />,
                   title: "Battery Replacement",
-                  description: "Quick and reliable replacement with warranty.",
+                  description:
+                    "Affordable on-site battery replacement anywhere in Abu Dhabi.",
                 },
                 {
                   icon: <FiTruck className="text-2xl text-primary" />,
-                  title: "Free Delivery & Installation",
-                  description:
-                    "Get your battery delivered and installed at no extra cost.",
-                },
-                {
-                  icon: <FiPhoneCall className="text-2xl text-primary" />,
                   title: "Emergency Jumpstart",
                   description:
-                    "24/7 roadside battery jumpstart service anywhere in Abu Dhabi.",
+                    "24/7 roadside battery assistance for dead batteries.",
                 },
                 {
                   icon: <FiShield className="text-2xl text-primary" />,
+                  title: "Battery Testing & Diagnosis",
+                  description:
+                    "Identify battery issues accurately before replacement.",
+                },
+                {
+                  icon: <FiUsers className="text-2xl text-primary" />,
                   title: "Warranty Support",
                   description:
-                    "All batteries come with official manufacturer warranty.",
+                    "All batteries are genuine and come with manufacturer warranty.",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -212,7 +212,7 @@ const AboutUs = () => {
               ))}
             </motion.div>
 
-            {/* Location and Hours */}
+            {/* Location & Hours */}
             <motion.div
               className="flex flex-wrap gap-6 mt-8"
               variants={itemVariants}
@@ -230,14 +230,14 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* SEO Structured Data */}
+      {/* Structured Data */}
       <script type="application/ld+json">
         {`
         {
           "@context": "https://schema.org",
           "@type": "AutoRepair",
-          "name": "Mohd. Khan Auto Parts",
-          "serviceType": "Online Car Battery Replacement",
+          "name": "Mohammad Khan Auto Parts",
+          "serviceType": "On-Site Car Battery Replacement and Assistance",
           "image": "https://mohammadkhanautoparts.ae/banner.png",
           "address": {
             "@type": "PostalAddress",

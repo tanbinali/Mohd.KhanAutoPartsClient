@@ -7,7 +7,7 @@ const Contact = () => {
     {
       title: "Call Us in Abu Dhabi",
       description:
-        "Need urgent car battery replacement in Mussafah or Abu Dhabi? Speak directly with our battery experts for immediate assistance.",
+        "Stuck with a dead battery in Mussafah or Abu Dhabi? Speak directly with our team for immediate on-site battery replacement.",
       icon: <FiPhone className="w-8 h-8" />,
       buttonText: "+971 55 693 9668",
       link: "tel:+971556939668",
@@ -17,7 +17,7 @@ const Contact = () => {
     {
       title: "Chat on WhatsApp",
       description:
-        "Message us on WhatsApp for fast support with car battery delivery, installation, and emergency roadside service across Abu Dhabi.",
+        "Message us on WhatsApp for fast assistance with battery replacement, installation, or roadside help anywhere in Abu Dhabi.",
       icon: <FaWhatsapp className="w-8 h-8" />,
       buttonText: "Message Us",
       link: "https://wa.me/+971556939668",
@@ -56,7 +56,7 @@ const Contact = () => {
     <section
       id="contact"
       className="py-20 md:py-28 bg-base-200 relative overflow-hidden"
-      aria-label="Contact us for car battery replacement in Abu Dhabi"
+      aria-label="Contact Mohammad Khan Auto Parts for on-site battery service in Abu Dhabi"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
@@ -68,17 +68,17 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-4">
-            Contact Us for Car Battery Services
+            Contact Us for On-Site Car Battery Services
           </h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
           <p className="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto">
-            Stuck with a dead battery in Abu Dhabi or Mussafah? Call, WhatsApp,
-            or email our team for 24/7 battery replacement, delivery, and
-            roadside assistance.
+            Need a quick battery replacement in Abu Dhabi or Mussafah? Call or
+            WhatsApp our team for fast, affordable, and reliable on-site
+            assistance.
           </p>
         </motion.div>
 
-        {/* Contact Methods */}
+        {/* Contact Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={containerVariants}
@@ -125,23 +125,25 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      {/* SEO Schema */}
+      {/* SEO Structured Data */}
       <script type="application/ld+json">
         {`
         {
           "@context": "https://schema.org",
           "@type": "AutomotiveBusiness",
           "name": "Mohammad Khan Auto Parts",
-          "serviceType": "Car Battery Replacement Service",
+          "serviceType": "On-Site Car Battery Replacement",
           "areaServed": "Abu Dhabi, UAE",
+          "telephone": "+971556939668",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+971556939668",
             "contactType": "customer service",
-            "availableLanguage": ["English"]
-          }
+            "availableLanguage": ["English", "Arabic"]
+          },
+          "url": "https://mohammadkhanautoparts.ae"
         }
-      `}
+        `}
       </script>
     </section>
   );

@@ -18,7 +18,7 @@ const menuItems = [
   },
   {
     id: "products",
-    label: "Products",
+    label: "Batteries",
     icon: <FaBoxes className="inline-block mr-2" />,
   },
   {

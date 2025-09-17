@@ -1,17 +1,14 @@
 import { motion } from "framer-motion";
 import video from "../assets/hero-video.mp4";
-import { FiMessageSquare, FiPhone, FiMail } from "react-icons/fi";
+import { FiPhone } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Hero = () => {
-  // Scroll helpers
   const scrollToProducts = () => {
     const el = document.getElementById("products");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-  // Animations variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,7 +40,7 @@ const Hero = () => {
         className="absolute inset-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeInOut" }}
+        transition={{ duration: 1.2 }}
       >
         <video
           src={video}
@@ -51,8 +48,8 @@ const Hero = () => {
           loop
           muted
           className="w-full h-full object-cover"
-          title="Car Battery Replacement Service in Abu Dhabi – Mohammad Khan"
-          aria-label="Online car battery delivery and roadside replacement in Mussafah Abu Dhabi"
+          title="On-Site Car Battery Replacement Service in Abu Dhabi – Mohammad Khan"
+          aria-label="24/7 on-site car battery replacement and roadside assistance in Mussafah and Abu Dhabi"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
       </motion.div>
@@ -78,9 +75,9 @@ const Hero = () => {
           className="mt-6 max-w-3xl text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed"
           variants={itemVariants}
         >
-          24/7 car battery replacement, delivery, and roadside assistance in
-          Mussafah & Abu Dhabi. Fast, reliable, and affordable service wherever
-          you are.
+          Stranded with a dead battery? We provide fast, reliable, and
+          affordable 24/7 on-site battery replacement, delivery, and roadside
+          assistance anywhere in Mussafah & Abu Dhabi.
         </motion.h2>
 
         {/* CTA Buttons */}
@@ -98,7 +95,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
           >
             <FaWhatsapp className="w-6 h-6" />
-            Chat for Battery Help
+            Chat on WhatsApp
           </motion.a>
           <motion.a
             href="tel:+971556939668"
@@ -110,12 +107,12 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
           >
             <FiPhone className="w-6 h-6" />
-            Call Directly for Battery
+            Call Now
           </motion.a>
         </motion.div>
       </motion.div>
 
-      {/* Scroll down arrow */}
+      {/* Scroll Down Arrow */}
       <motion.div
         className="absolute bottom-10 w-full flex justify-center z-20"
         variants={arrowVariants}
@@ -124,7 +121,7 @@ const Hero = () => {
         <button
           onClick={scrollToProducts}
           className="text-white bg-accent bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 shadow-lg focus:outline-none"
-          aria-label="Scroll to battery services"
+          aria-label="Scroll to our battery services section"
         >
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"

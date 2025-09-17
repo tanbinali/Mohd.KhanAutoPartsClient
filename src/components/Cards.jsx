@@ -11,15 +11,15 @@ const Cards = () => {
     {
       title: "100% Genuine Car Batteries",
       description:
-        "We supply certified car batteries in Abu Dhabi with warranty and guaranteed long-lasting performance.",
+        "We supply certified batteries in Abu Dhabi with warranty and long-lasting performance.",
       icon: <FiBatteryCharging className="w-10 h-10" />,
       color: "bg-green-500/10",
       hoverColor: "group-hover:bg-green-500/20",
     },
     {
-      title: "Fast Battery Replacement",
+      title: "Fast On-Site Replacement",
       description:
-        "On-demand mobile battery replacement at your location in Abu Dhabi and Mussafah within hours.",
+        "Call us anytime and our team will reach your location in Abu Dhabi or Mussafah for quick battery replacement.",
       icon: <FiTruck className="w-10 h-10" />,
       color: "bg-blue-500/10",
       hoverColor: "group-hover:bg-blue-500/20",
@@ -27,7 +27,7 @@ const Cards = () => {
     {
       title: "24/7 Emergency Support",
       description:
-        "Stranded with a dead battery? Call us anytime for quick roadside assistance in Abu Dhabi.",
+        "Stranded with a dead battery? We provide fast roadside assistance whenever you need it.",
       icon: <FiHeadphones className="w-10 h-10" />,
       color: "bg-orange-500/10",
       hoverColor: "group-hover:bg-orange-500/20",
@@ -35,7 +35,7 @@ const Cards = () => {
     {
       title: "Warranty & Reliability",
       description:
-        "Every car battery comes with manufacturer warranty and professional installation guarantee.",
+        "All batteries come with official manufacturer warranty and professional on-site installation guarantee.",
       icon: <FiShield className="w-10 h-10" />,
       color: "bg-purple-500/10",
       hoverColor: "group-hover:bg-purple-500/20",
@@ -47,10 +47,7 @@ const Cards = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
     },
   };
 
@@ -95,7 +92,7 @@ const Cards = () => {
     <section
       id="choose-us"
       className="py-20 md:py-28 bg-base-100 relative overflow-hidden"
-      aria-label="Why choose our online car battery services in Abu Dhabi"
+      aria-label="Why choose our on-call car battery services in Abu Dhabi"
     >
       {/* Decorative Background */}
       <div className="absolute top-0 left-0 w-full h-72 bg-gradient-to-b from-primary/5 to-transparent -z-10"></div>
@@ -113,15 +110,14 @@ const Cards = () => {
             className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-primary mb-4"
             variants={titleVariants}
           >
-            Why Choose Our Car Battery Services in Abu Dhabi
+            Why Choose Our Car Battery Services
           </motion.h2>
           <motion.p
             className="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto"
             variants={titleVariants}
           >
-            Trusted by thousands of drivers for reliable car battery
-            replacement, fast service, and 24/7 support across Abu Dhabi and
-            Mussafah.
+            Trusted by drivers across Abu Dhabi and Mussafah for reliable, fast,
+            and affordable car battery replacement and emergency assistance.
           </motion.p>
         </motion.div>
 
