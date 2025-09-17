@@ -43,7 +43,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full overflow-visible"
+      className="relative min-h-screen w-full overflow-visible py-20"
     >
       {/* Background Video */}
       <motion.div
