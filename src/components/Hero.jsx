@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import video from "../assets/hero-video.mp4";
+import video from "/assets/hero-video.mp4";
 import {
   FiClock,
   FiDollarSign,
