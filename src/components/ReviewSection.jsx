@@ -7,9 +7,9 @@ const reviews = [
     name: "Muhammad Umar",
     rating: 5,
     time: "2 years ago",
-    text: "Excellent service and great working by the car technician, especially Abdul Rehman & Abdul Sattar. They were really helpful regarding my Honda Accord parts sorting and the price was reasonable for car battery.",
+    text: "Excellent service and fast car battery replacement. The technicians were professional and replaced my Honda Accord battery on time.",
     response:
-      "Thank you for your kind words! We're glad Abdul Rehman and Abdul Sattar provided excellent service.",
+      "Thank you for your kind words! We're glad our team could assist with your Honda Accord battery.",
     avatar: "MU",
   },
   {
@@ -17,57 +17,41 @@ const reviews = [
     name: "Muthasim Cherichi",
     rating: 5,
     time: "2 years ago",
-    text: "Services are good had a battery replacement which they have changed when the warranty is due in 2 months.",
+    text: "Had a car battery replacement, they changed it quickly and even honored the warranty with no hassle.",
     response:
-      "We appreciate your feedback! We stand by our warranty commitments.",
+      "We appreciate your feedback! Standing by our warranty commitments is our promise.",
     avatar: "MC",
   },
   {
     id: 3,
-    name: "Mohammed Faisal",
+    name: "Ali Raza",
     rating: 5,
-    time: "a week ago",
-    text: "Good shop with quality parts and professional service. Will definitely return for future needs.",
+    time: "1 month ago",
+    text: "Quick service and friendly staff. Highly recommend this shop for car batteries. The replacement is working perfectly.",
     response: null,
-    avatar: "MF",
+    avatar: "AR",
   },
   {
     id: 4,
     name: "Ayesha Khan",
     rating: 4,
     time: "3 months ago",
-    text: "Very professional staff and reasonable pricing. Will visit again!",
+    text: "Professional staff and affordable battery prices. The installation was done in minutes.",
     response:
       "Thank you for your feedback! We look forward to serving you again.",
     avatar: "AK",
   },
-  {
-    id: 5,
-    name: "Ali Raza",
-    rating: 5,
-    time: "1 month ago",
-    text: "Quick service and friendly staff. Highly recommend this shop for car parts. The battery I purchased is working perfectly.",
-    response: null,
-    avatar: "AR",
-  },
-  {
-    id: 6,
-    name: "Sarah Ahmed",
-    rating: 5,
-    time: "2 months ago",
-    text: "They have all the parts I needed for my Toyota Camry. The staff was knowledgeable and helped me find exactly what I needed.",
-    response: "We're happy we could help with your Toyota Camry parts!",
-    avatar: "SA",
-  },
 ];
 
 const ReviewsSection = () => {
-  // Build JSON-LD structured data
+  // Build JSON-LD structured data (Battery Store SEO)
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "AutoPartsStore",
-    name: "Mohammad Khan Auto Parts",
+    "@type": "Store",
+    name: "Mohammad Khan Car Battery Services",
     url: "https://mohammadkhanautoparts.ae",
+    description:
+      "Professional online car battery replacement and delivery service in Abu Dhabi & Mussafah. Fast, affordable, and reliable.",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: (
@@ -95,7 +79,7 @@ const ReviewsSection = () => {
     <section
       id="reviews"
       className="py-20 bg-base-200 overflow-hidden"
-      aria-label="Customer Reviews for Mohammad Khan Auto Parts Abu Dhabi"
+      aria-label="Customer Reviews for Car Battery Replacement Abu Dhabi"
     >
       {/* Inject structured data for SEO */}
       <script type="application/ld+json">
@@ -112,12 +96,12 @@ const ReviewsSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Customer Reviews
+            Customer Reviews – Car Battery Services
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
           <p className="text-lg text-base-content/80 max-w-3xl mx-auto">
-            Hear what our customers have to say about our auto parts and service
-            in Abu Dhabi
+            See why customers trust us for fast and reliable car battery
+            replacement in Abu Dhabi & Mussafah.
           </p>
         </motion.div>
 

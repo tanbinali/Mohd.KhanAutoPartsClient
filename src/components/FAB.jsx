@@ -1,11 +1,6 @@
 import { useState } from "react";
-import {
-  FiPhone,
-  FiMessageSquare,
-  FiMail,
-  FiUser,
-  FiHeart,
-} from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+import { FiPhone, FiMessageSquare, FiHeart } from "react-icons/fi";
 
 const FAB = () => {
   return (
@@ -27,7 +22,7 @@ const FAB = () => {
       {/* buttons that show up when FAB is open */}
       {/* Call */}
       <a href="tel:+971556939668" target="_blank" rel="noopener noreferrer">
-        <button className="btn btn-lg btn-circle btn-success">
+        <button className="btn btn-lg btn-circle btn-accent">
           <FiPhone className="w-5 h-5" />
         </button>
       </a>
@@ -38,15 +33,8 @@ const FAB = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="btn btn-lg btn-circle btn-accent">
-          <FiMessageSquare className="w-5 h-5" />
-        </button>
-      </a>
-
-      {/* Email */}
-      <a href="mailto:info@mohammadkhanparts.com">
-        <button className="btn btn-lg btn-circle btn-warning">
-          <FiMail className="w-5 h-5" />
+        <button className="btn btn-lg btn-circle btn-success">
+          <FaWhatsapp className="w-5 h-5" />
         </button>
       </a>
     </div>

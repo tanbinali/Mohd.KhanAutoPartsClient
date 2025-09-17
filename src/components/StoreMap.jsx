@@ -113,7 +113,7 @@ const StoreMap = () => {
             Visit Our Store
           </h2>
           <p className="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto">
-            Find us conveniently located in Abu Dhabi for all your auto parts
+            Find us conveniently located in Abu Dhabi for all your car battery
             needs
           </p>
         </motion.div>

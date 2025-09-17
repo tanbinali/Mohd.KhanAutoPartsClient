@@ -41,40 +41,7 @@ const Footer = () => {
           <FiPhone size={24} />
           +971 55 693 9668
         </a>
-
-        {/* Email */}
-        <a
-          href="mailto:info@mohammadkhanparts.com"
-          className="flex items-center gap-1 hover:text-accent transition-colors"
-        >
-          <FiMail size={24} />
-          info@mohammadkhanparts.com
-        </a>
       </nav>
-
-      {/* Schema.org Business Info */}
-      <script type="application/ld+json">
-        {`
-        {
-          "@context": "https://schema.org",
-          "@type": "AutoPartsStore",
-          "name": "Mohammad Khan Auto Parts",
-          "image": "https://mohammadkhanautoparts.ae/logo.png",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Mussafah",
-            "addressRegion": "Abu Dhabi",
-            "addressCountry": "AE"
-          },
-          "telephone": "+971556939668",
-          "email": "info@mohammadkhanparts.com",
-          "url": "https://mohammadkhanautoparts.ae",
-          "sameAs": [
-            "https://wa.me/+971556939668"
-          ]
-        }
-        `}
-      </script>
     </footer>
   );
 };

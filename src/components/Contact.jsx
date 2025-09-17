@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
-import { FiPhone, FiMessageSquare, FiMail } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+import { FiPhone } from "react-icons/fi";
 
 const Contact = () => {
   const contactMethods = [
     {
       title: "Call Us in Abu Dhabi",
       description:
-        "Speak directly with our auto parts specialists in Mussafah, Abu Dhabi for immediate assistance with car spare parts.",
+        "Need urgent car battery replacement in Mussafah or Abu Dhabi? Speak directly with our battery experts for immediate assistance.",
       icon: <FiPhone className="w-8 h-8" />,
       buttonText: "+971 55 693 9668",
       link: "tel:+971556939668",
@@ -16,22 +17,12 @@ const Contact = () => {
     {
       title: "Chat on WhatsApp",
       description:
-        "Get fast replies on WhatsApp for inquiries about genuine spare parts, batteries, and accessories across the UAE.",
-      icon: <FiMessageSquare className="w-8 h-8" />,
+        "Message us on WhatsApp for fast support with car battery delivery, installation, and emergency roadside service across Abu Dhabi.",
+      icon: <FaWhatsapp className="w-8 h-8" />,
       buttonText: "Message Us",
       link: "https://wa.me/+971556939668",
       color: "bg-accent",
       delay: 0.2,
-    },
-    {
-      title: "Email Our Team",
-      description:
-        "Send detailed inquiries about auto parts availability, pricing, and delivery in Abu Dhabi. We reply within 24 hours.",
-      icon: <FiMail className="w-8 h-8" />,
-      buttonText: "info@mkap.ae",
-      link: "mailto:info@mkap.ae",
-      color: "bg-secondary",
-      delay: 0.3,
     },
   ];
 
@@ -65,7 +56,7 @@ const Contact = () => {
     <section
       id="contact"
       className="py-20 md:py-28 bg-base-200 relative overflow-hidden"
-      aria-label="Contact Mohammad Khan Auto Parts Abu Dhabi"
+      aria-label="Contact us for car battery replacement in Abu Dhabi"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
@@ -77,19 +68,19 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-4">
-            Contact Mohammad Khan Auto Parts in Abu Dhabi
+            Contact Us for Car Battery Services
           </h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
           <p className="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto">
-            Have questions about genuine car spare parts in Mussafah or Abu
-            Dhabi? Call, WhatsApp, or email our team for quick support and
-            expert advice.
+            Stuck with a dead battery in Abu Dhabi or Mussafah? Call, WhatsApp,
+            or email our team for 24/7 battery replacement, delivery, and
+            roadside assistance.
           </p>
         </motion.div>
 
         {/* Contact Methods */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -133,18 +124,21 @@ const Contact = () => {
           ))}
         </motion.div>
       </div>
+
+      {/* SEO Schema */}
       <script type="application/ld+json">
         {`
         {
           "@context": "https://schema.org",
-          "@type": "AutoPartsStore",
+          "@type": "AutomotiveBusiness",
           "name": "Mohammad Khan Auto Parts",
+          "serviceType": "Car Battery Replacement Service",
+          "areaServed": "Abu Dhabi, UAE",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+971556939668",
             "contactType": "customer service",
-            "areaServed": "AE",
-            "availableLanguage": ["English", "Arabic"]
+            "availableLanguage": ["English"]
           }
         }
       `}

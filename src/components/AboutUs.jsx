@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import {
   FiZap,
-  FiTool,
   FiTruck,
   FiShield,
-  FiAward,
-  FiUsers,
   FiClock,
   FiMapPin,
+  FiUsers,
+  FiAward,
+  FiPhoneCall,
 } from "react-icons/fi";
 import banner from "../assets/Banner.png";
 
@@ -17,10 +17,7 @@ const AboutUs = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
     },
   };
 
@@ -29,11 +26,7 @@ const AboutUs = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      },
+      transition: { type: "spring", stiffness: 100, damping: 15 },
     },
   };
 
@@ -51,19 +44,6 @@ const AboutUs = () => {
     },
   };
 
-  const statsVariants = {
-    hidden: { scale: 0.9, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        delay: 0.5,
-      },
-    },
-  };
-
   return (
     <section id="about" className="py-15 bg-base-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -76,12 +56,13 @@ const AboutUs = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            About Mohammad Khan Auto Parts Abu Dhabi
+            About Mohammad Khan Auto Parts
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
           <p className="text-lg text-base-content/80 max-w-3xl mx-auto">
-            Trusted by thousands of customers across Abu Dhabi for quality auto
-            parts and exceptional service
+            We specialize in <strong>online car battery replacement</strong>{" "}
+            services across Abu Dhabi – fast delivery, free installation, and
+            24/7 emergency support.
           </p>
         </motion.div>
 
@@ -96,7 +77,7 @@ const AboutUs = () => {
           >
             <img
               src={banner + "?w=500&format=webp"}
-              alt="Auto parts store in Mussafah Abu Dhabi - Mohammad Khan Auto Parts"
+              alt="Online car battery replacement Abu Dhabi - Mohd. Khan Auto Parts"
               loading="lazy"
               className="rounded-xl shadow-2xl w-full object-cover"
             />
@@ -128,37 +109,32 @@ const AboutUs = () => {
               className="text-3xl font-bold text-primary mb-6"
               variants={itemVariants}
             >
-              Your Trusted Car Spare Parts Partner in Abu Dhabi
+              Abu Dhabi’s Trusted Car Battery Service
             </motion.h3>
 
             <motion.p
               className="text-base-content/80 mb-6 leading-relaxed"
               variants={itemVariants}
             >
-              Mohammad Khan Auto Parts has been proudly serving Abu Dhabi with
-              premium auto parts and accessories. Our mission is to provide
-              reliable products, fast service, and expert guidance to every
-              customer.
+              At Mohd. Khan Auto Parts, we focus exclusively on car battery
+              solutions. From <strong>delivery & installation</strong> to{" "}
+              <strong>emergency jump-starts</strong>, our certified team ensures
+              your car gets back on the road quickly and safely.
             </motion.p>
 
             <motion.p
               className="text-base-content/80 mb-8 leading-relaxed"
               variants={itemVariants}
             >
-              Whether you need batteries, alternators, starter motors, or other
-              essential car parts, our team of certified professionals ensures
-              you get the right product quickly and efficiently. We source our
-              products from trusted manufacturers to guarantee quality and
-              durability.
+              We only provide genuine, warranty-backed batteries from trusted
+              brands. With fast response and 24/7 support, we’re the most
+              reliable choice for drivers in Abu Dhabi.
             </motion.p>
 
             {/* Stats */}
             <motion.div
               className="grid grid-cols-2 gap-6 mb-10"
-              variants={statsVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
+              variants={containerVariants}
             >
               <div className="text-center p-4 bg-base-100 rounded-lg">
                 <FiUsers className="text-3xl text-primary mx-auto mb-2" />
@@ -166,16 +142,16 @@ const AboutUs = () => {
                   1000+
                 </span>
                 <span className="block text-sm text-base-content/70">
-                  Satisfied Customers
+                  Happy Customers
                 </span>
               </div>
               <div className="text-center p-4 bg-base-100 rounded-lg">
                 <FiAward className="text-3xl text-primary mx-auto mb-2" />
                 <span className="block text-2xl font-bold text-primary">
-                  150+
+                  24/7
                 </span>
                 <span className="block text-sm text-base-content/70">
-                  Quality Brands
+                  Emergency Support
                 </span>
               </div>
             </motion.div>
@@ -185,7 +161,7 @@ const AboutUs = () => {
               className="text-xl font-semibold text-primary mb-6"
               variants={itemVariants}
             >
-              What We Offer
+              Our Battery Services
             </motion.h4>
 
             <motion.div
@@ -195,27 +171,26 @@ const AboutUs = () => {
               {[
                 {
                   icon: <FiZap className="text-2xl text-primary" />,
-                  title: "Car Batteries",
-                  description:
-                    "High-quality batteries with extended lifespan and warranty",
-                },
-                {
-                  icon: <FiTool className="text-2xl text-primary" />,
-                  title: "Alternators & Starters",
-                  description:
-                    "Reliable power solutions from trusted manufacturers",
-                },
-                {
-                  icon: <FiShield className="text-2xl text-primary" />,
-                  title: "Car Accessories",
-                  description:
-                    "Premium accessories to enhance safety and performance",
+                  title: "Battery Replacement",
+                  description: "Quick and reliable replacement with warranty.",
                 },
                 {
                   icon: <FiTruck className="text-2xl text-primary" />,
-                  title: "Fast Delivery",
+                  title: "Free Delivery & Installation",
                   description:
-                    "Quick and reliable delivery across Abu Dhabi within hours",
+                    "Get your battery delivered and installed at no extra cost.",
+                },
+                {
+                  icon: <FiPhoneCall className="text-2xl text-primary" />,
+                  title: "Emergency Jumpstart",
+                  description:
+                    "24/7 roadside battery jumpstart service anywhere in Abu Dhabi.",
+                },
+                {
+                  icon: <FiShield className="text-2xl text-primary" />,
+                  title: "Warranty Support",
+                  description:
+                    "All batteries come with official manufacturer warranty.",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -244,34 +219,36 @@ const AboutUs = () => {
             >
               <div className="flex items-center gap-2 text-base-content/70">
                 <FiMapPin className="text-primary" />
-                <span>Musaffah - M6 - Abu Dhabi - United Arab Emirates</span>
+                <span>Musaffah, M6, Abu Dhabi, UAE</span>
               </div>
               <div className="flex items-center gap-2 text-base-content/70">
                 <FiClock className="text-primary" />
-                <span>Open Daily: 8:00 AM – 10:00 PM</span>
+                <span>Open 24/7 for Emergency Service</span>
               </div>
             </motion.div>
           </motion.div>
         </div>
       </div>
+
+      {/* SEO Structured Data */}
       <script type="application/ld+json">
         {`
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoPartsStore",
-    "name": "Mohammad Khan Auto Parts",
-    "image": "https://mohammadkhanautoparts.ae/banner.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Musaffah M6",
-      "addressLocality": "Abu Dhabi",
-      "addressCountry": "AE"
-    },
-    "openingHours": "Mo-Su 08:00-22:00",
-    "telephone": "+971556939668",
-    "url": "https://mohammadkhanautoparts.ae"
-  }
-  `}
+        {
+          "@context": "https://schema.org",
+          "@type": "AutoRepair",
+          "name": "Mohd. Khan Auto Parts",
+          "serviceType": "Online Car Battery Replacement",
+          "image": "https://mohammadkhanautoparts.ae/banner.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Abu Dhabi",
+            "addressCountry": "AE"
+          },
+          "openingHours": "Mo-Su 00:00-23:59",
+          "telephone": "+971556939668",
+          "url": "https://mohammadkhanautoparts.ae"
+        }
+        `}
       </script>
     </section>
   );

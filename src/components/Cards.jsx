@@ -1,37 +1,42 @@
 import { motion } from "framer-motion";
-import { FiCheckCircle, FiTool, FiTruck, FiHeadphones } from "react-icons/fi";
+import {
+  FiBatteryCharging,
+  FiTruck,
+  FiHeadphones,
+  FiShield,
+} from "react-icons/fi";
 
 const Cards = () => {
   const cardData = [
     {
-      title: "100% Genuine Auto Parts",
+      title: "100% Genuine Car Batteries",
       description:
-        "We provide certified car spare parts in Abu Dhabi with full authenticity and reliability guarantees.",
-      icon: <FiCheckCircle className="w-10 h-10" />,
+        "We supply certified car batteries in Abu Dhabi with warranty and guaranteed long-lasting performance.",
+      icon: <FiBatteryCharging className="w-10 h-10" />,
       color: "bg-green-500/10",
       hoverColor: "group-hover:bg-green-500/20",
     },
     {
-      title: "Premium Car Spare Parts",
+      title: "Fast Battery Replacement",
       description:
-        "Durable spare parts and accessories that deliver long-lasting performance for all major car brands in the UAE.",
-      icon: <FiTool className="w-10 h-10" />,
+        "On-demand mobile battery replacement at your location in Abu Dhabi and Mussafah within hours.",
+      icon: <FiTruck className="w-10 h-10" />,
       color: "bg-blue-500/10",
       hoverColor: "group-hover:bg-blue-500/20",
     },
     {
-      title: "Fast Auto Parts Delivery in Abu Dhabi",
+      title: "24/7 Emergency Support",
       description:
-        "Get your order delivered safely to your doorstep in Mussafah and across Abu Dhabi within 24 hours.",
-      icon: <FiTruck className="w-10 h-10" />,
+        "Stranded with a dead battery? Call us anytime for quick roadside assistance in Abu Dhabi.",
+      icon: <FiHeadphones className="w-10 h-10" />,
       color: "bg-orange-500/10",
       hoverColor: "group-hover:bg-orange-500/20",
     },
     {
-      title: "Expert Support for Car Parts",
+      title: "Warranty & Reliability",
       description:
-        "Our specialists help you choose the right spare parts for Toyota, Nissan, Honda, and other vehicles in the UAE.",
-      icon: <FiHeadphones className="w-10 h-10" />,
+        "Every car battery comes with manufacturer warranty and professional installation guarantee.",
+      icon: <FiShield className="w-10 h-10" />,
       color: "bg-purple-500/10",
       hoverColor: "group-hover:bg-purple-500/20",
     },
@@ -54,61 +59,35 @@ const Cards = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
+      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
     },
   };
 
   const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-      scale: 0.95,
-    },
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
+      transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
     },
   };
 
   const cardHoverVariants = {
-    rest: {
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
+    rest: { y: 0, scale: 1, transition: { duration: 0.3, ease: "easeOut" } },
     hover: {
       y: -12,
       scale: 1.02,
-      transition: {
-        duration: 0.4,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
+      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
     },
   };
 
   const iconVariants = {
-    rest: {
-      rotate: 0,
-      scale: 1,
-    },
+    rest: { rotate: 0, scale: 1 },
     hover: {
       rotate: 5,
       scale: 1.1,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.3, ease: "easeOut" },
     },
   };
 
@@ -116,9 +95,9 @@ const Cards = () => {
     <section
       id="choose-us"
       className="py-20 md:py-28 bg-base-100 relative overflow-hidden"
-      aria-label="Why choose Mohammad Khan Auto Parts Abu Dhabi"
+      aria-label="Why choose our online car battery services in Abu Dhabi"
     >
-      {/* Background decorative elements */}
+      {/* Decorative Background */}
       <div className="absolute top-0 left-0 w-full h-72 bg-gradient-to-b from-primary/5 to-transparent -z-10"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full -translate-x-1/4 translate-y-1/2 -z-10"></div>
 
@@ -134,14 +113,15 @@ const Cards = () => {
             className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-primary mb-4"
             variants={titleVariants}
           >
-            Why Choose Mohammad Khan Auto Parts in Abu Dhabi
+            Why Choose Our Car Battery Services in Abu Dhabi
           </motion.h2>
           <motion.p
             className="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto"
             variants={titleVariants}
           >
-            Discover why drivers across Abu Dhabi and Mussafah trust us for
-            genuine car spare parts, fast delivery, and expert customer support.
+            Trusted by thousands of drivers for reliable car battery
+            replacement, fast service, and 24/7 support across Abu Dhabi and
+            Mussafah.
           </motion.p>
         </motion.div>
 
@@ -166,7 +146,7 @@ const Cards = () => {
                 className={`absolute inset-0 ${card.color} ${card.hoverColor} transition-all duration-500 opacity-0 group-hover:opacity-100 -z-10`}
               ></div>
 
-              {/* Icon container with subtle gradient */}
+              {/* Icon */}
               <motion.div
                 className="mb-6 p-5 rounded-2xl bg-gradient-to-br from-base-100 to-base-200 shadow-sm flex items-center justify-center"
                 variants={iconVariants}

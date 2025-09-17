@@ -146,7 +146,7 @@ const Navbar = () => {
           </motion.div>
 
           <span className="text-xl sm:text-2xl font-bold text-primary font-heading tracking-tight">
-            Mohammad Khan <span className="hidden sm:inline">Auto Parts</span>
+            Mohammad Khan Auto Parts
           </span>
         </motion.div>
 

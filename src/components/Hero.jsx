@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import video from "../assets/hero-video.mp4";
 import { FiMessageSquare, FiPhone, FiMail } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Hero = () => {
   // Scroll helpers
@@ -35,16 +36,6 @@ const Hero = () => {
     },
   };
 
-  const badgeVariants = {
-    hidden: { scale: 0, rotate: -180, opacity: 0 },
-    visible: {
-      scale: 1,
-      rotate: 0,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 120, delay: 1 },
-    },
-  };
-
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">
       {/* Background Video */}
@@ -60,10 +51,9 @@ const Hero = () => {
           loop
           muted
           className="w-full h-full object-cover"
-          title="Auto Parts Shop in Abu Dhabi – Mohd. Khan Auto Parts"
-          aria-label="Car spare parts and batteries in Mussafah Abu Dhabi"
+          title="Car Battery Replacement Service in Abu Dhabi – Mohammad Khan"
+          aria-label="Online car battery delivery and roadside replacement in Mussafah Abu Dhabi"
         />
-
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
       </motion.div>
 
@@ -75,35 +65,29 @@ const Hero = () => {
         animate="visible"
       >
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl font-bold font-heading text-white leading-tight"
+          className="text-5xl sm:text-6xl md:text-7xl font-bold font-heading text-accent leading-tight text-center"
           variants={itemVariants}
         >
-          Mohammad Khan Auto Parts –{" "}
-          <span className="text-accent">Car Spare Parts in Abu Dhabi</span>
+          Car Battery Services{" "}
+          <span className="sm:whitespace-nowrap block sm:inline">
+            in Abu Dhabi
+          </span>
         </motion.h1>
 
         <motion.h2
           className="mt-6 max-w-3xl text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed"
           variants={itemVariants}
         >
-          Genuine car spare parts, batteries, and accessories in Mussafah, Abu
-          Dhabi. Fast delivery & trusted service across the UAE.
+          24/7 car battery replacement, delivery, and roadside assistance in
+          Mussafah & Abu Dhabi. Fast, reliable, and affordable service wherever
+          you are.
         </motion.h2>
 
+        {/* CTA Buttons */}
         <motion.div
-          className="mt-10 flex flex-col sm:flex-row gap-6 items-center w-full max-w-md"
+          className="mt-10 flex flex-col sm:flex-row gap-6 justify-center items-center w-full"
           variants={itemVariants}
         >
-          <motion.button
-            onClick={scrollToProducts}
-            className="btn btn-primary btn-lg md:btn-xl shadow-lg transform transition-transform duration-200 hover:-translate-y-1"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Browse Auto Parts
-          </motion.button>
-
           <motion.a
             href="https://wa.me/+971556939668"
             target="_blank"
@@ -113,32 +97,21 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FiMessageSquare className="w-6 h-6" />
-            Chat for Car Parts
+            <FaWhatsapp className="w-6 h-6" />
+            Chat for Battery Help
           </motion.a>
-        </motion.div>
-
-        {/* Additional contact info */}
-        <motion.div
-          className="mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-12 text-white/80"
-          variants={itemVariants}
-        >
-          <div className="flex items-center space-x-2">
-            <FiPhone className="w-6 h-6 text-accent" />
-            <a href="tel:+971556939668" className="hover:underline">
-              +971 55 693 9668
-            </a>
-          </div>
-
-          <div className="flex items-center space-x-2">
-            <FiMail className="w-6 h-6 text-accent" />
-            <a
-              href="mailto:info@mohammadkhanparts.com"
-              className="hover:underline"
-            >
-              info@mohammadkhanparts.com
-            </a>
-          </div>
+          <motion.a
+            href="tel:+971556939668"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-accent btn-lg md:btn-xl shadow-lg flex items-center gap-3"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FiPhone className="w-6 h-6" />
+            Call Directly for Battery
+          </motion.a>
         </motion.div>
       </motion.div>
 
@@ -151,7 +124,7 @@ const Hero = () => {
         <button
           onClick={scrollToProducts}
           className="text-white bg-accent bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 shadow-lg focus:outline-none"
-          aria-label="Scroll to products"
+          aria-label="Scroll to battery services"
         >
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
