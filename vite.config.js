@@ -11,7 +11,7 @@ export default defineConfig({
     react(),
     imagetools(),
     sitemap({
-      hostname: "https://mohammadkhanautoparts.ae",
+      hostname: "https://mohammadkhanautoparts.com",
       outDir: "./dist",
     }),
   ],

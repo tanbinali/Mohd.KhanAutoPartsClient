@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import video from "/assets/hero-video.mp4";
+import video from "../assets/hero-video.mp4";
 import {
   FiClock,
   FiDollarSign,
@@ -150,32 +150,36 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* Scroll Arrow */}
+          {/* Location CTA */}
           <motion.div
-            className="flex justify-center mt-4 sm:mt-6"
-            variants={arrowVariants}
-            animate="animate"
+            className="flex flex-col items-center mt-4"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <button
-              onClick={scrollToProducts}
-              className="text-white bg-accent bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 shadow-lg focus:outline-none"
-              aria-label="Scroll to our battery services section"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 text-accent mb-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-10 h-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                whileHover={{ scale: 1.3 }}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </motion.svg>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+
+            <button
+              onClick={() => {
+                const mapSection = document.getElementById("map");
+                if (mapSection)
+                  mapSection.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="flex items-center gap-2 text-accent font-semibold text-lg hover:text-primary transition-colors"
+            >
+              Click here to visit our shop & buy car parts
             </button>
           </motion.div>
         </motion.div>

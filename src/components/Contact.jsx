@@ -141,7 +141,7 @@ const Contact = () => {
             "contactType": "customer service",
             "availableLanguage": ["English", "Arabic"]
           },
-          "url": "https://mohammadkhanautoparts.ae"
+          "url": "https://mohammadkhanautoparts.com"
         }
         `}
       </script>

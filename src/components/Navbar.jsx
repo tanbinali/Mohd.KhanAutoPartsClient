@@ -28,7 +28,7 @@ const menuItems = [
   },
   {
     id: "map",
-    label: "Map",
+    label: "Visit Us",
     icon: <FaMapMarkerAlt className="inline-block mr-2" />,
   },
 ];

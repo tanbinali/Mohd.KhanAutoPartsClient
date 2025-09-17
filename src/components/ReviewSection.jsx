@@ -49,7 +49,7 @@ const ReviewsSection = () => {
     "@context": "https://schema.org",
     "@type": "Store",
     name: "Mohammad Khan Car Battery Services",
-    url: "https://mohammadkhanautoparts.ae",
+    url: "https://mohammadkhanautoparts.com",
     description:
       "Professional online car battery replacement and delivery service in Abu Dhabi & Mussafah. Fast, affordable, and reliable.",
     aggregateRating: {

@@ -72,7 +72,7 @@ const StoreMap = () => {
     "@context": "https://schema.org",
     "@type": "AutoPartsStore",
     name: "Mohammad Khan Auto Parts",
-    image: "https://mohammadkhanautoparts.ae/logo.png",
+    image: "https://mohammadkhanautoparts.com/logo.png",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Musaffah - M6",
@@ -81,7 +81,7 @@ const StoreMap = () => {
     },
     telephone: "+971556939668",
     email: "info@mohammadkhanparts.com",
-    url: "https://mohammadkhanautoparts.ae",
+    url: "https://mohammadkhanautoparts.com",
     openingHours: ["Sat-Thu 08:00-22:00", "Fri 14:00-22:00"],
     areaServed: "Abu Dhabi and surrounding areas",
   };

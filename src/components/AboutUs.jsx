@@ -238,7 +238,7 @@ const AboutUs = () => {
           "@type": "AutoRepair",
           "name": "Mohammad Khan Auto Parts",
           "serviceType": "On-Site Car Battery Replacement and Assistance",
-          "image": "https://mohammadkhanautoparts.ae/banner.png",
+          "image": "https://mohammadkhanautoparts.com/banner.png",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Abu Dhabi",
@@ -246,7 +246,7 @@ const AboutUs = () => {
           },
           "openingHours": "Mo-Su 00:00-23:59",
           "telephone": "+971556939668",
-          "url": "https://mohammadkhanautoparts.ae"
+          "url": "https://mohammadkhanautoparts.com"
         }
         `}
       </script>

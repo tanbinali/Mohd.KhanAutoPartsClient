@@ -8,6 +8,14 @@ import {
   FiZoomIn,
   FiX,
 } from "react-icons/fi";
+import amaron from "../assets/Batteries/Amaron-din661.jpg";
+import fiamm from "../assets/Batteries/FIAMM-Titanium-Pro-L2X-64P_enl.jpg";
+import platinum from "../assets/Batteries/PLATINUM 55530.jpg";
+import sebang from "../assets/Batteries/SEBANG.png";
+import tuflong from "../assets/Batteries/tuflong-battery-_1_.jpg";
+import vartaAGM from "../assets/Batteries/VARTA AGM.png";
+import vartaBlue from "../assets/Batteries/VARTA Blue.png";
+import vartaDynamic from "../assets/Batteries/VARTA Dynamic SLI.png";
 
 // ✅ On-call car battery services
 const services = [
@@ -41,30 +49,20 @@ const services = [
   },
 ];
 
-// ✅ List all your battery image filenames here (public/assets/batteries/)
-const batteryImageFiles = [
-  "Amaron-din661.jpg",
-  "FIAMM-Titanium-Pro-L2X-64P_enl.jpg",
-  "PLATINUM 55530.jpg",
-  "SEBANG.png",
-  "tuflong-battery-_1_.jpg",
-  "VARTA AGM.png",
-  "VARTA Blue.png",
-  "VARTA Dynamic SLI.png",
+const productImages = [
+  { src: amaron, alt: "Amaron DIN661", caption: "Amaron DIN661" },
+  {
+    src: fiamm,
+    alt: "FIAMM Titanium Pro L2X-64P",
+    caption: "FIAMM Titanium Pro",
+  },
+  { src: platinum, alt: "Platinum 55530", caption: "Platinum 55530" },
+  { src: sebang, alt: "Sebang Battery", caption: "Sebang Battery" },
+  { src: tuflong, alt: "Tuflong Battery", caption: "Tuflong Battery" },
+  { src: vartaAGM, alt: "VARTA AGM", caption: "VARTA AGM" },
+  { src: vartaBlue, alt: "VARTA Blue", caption: "VARTA Blue" },
+  { src: vartaDynamic, alt: "VARTA Dynamic SLI", caption: "VARTA Dynamic SLI" },
 ];
-
-// Map them to a gallery-friendly format
-const productImages = batteryImageFiles.map((file) => {
-  const caption = file
-    .replace(/\.[^/.]+$/, "") // remove extension
-    .replace(/[-_]/g, " ") // replace - and _ with space
-    .replace(/\b\w/g, (c) => c.toUpperCase()); // capitalize each word
-  return {
-    src: `/assets/batteries/${file}`, // public folder path
-    alt: caption,
-    caption,
-  };
-});
 
 const ProductsGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
