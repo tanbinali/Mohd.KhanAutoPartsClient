@@ -8,14 +8,14 @@ import {
   FiZoomIn,
   FiX,
 } from "react-icons/fi";
-import amaron from "../assets/Batteries/Amaron-din661.jpg";
-import fiamm from "../assets/Batteries/FIAMM-Titanium-Pro-L2X-64P_enl.jpg";
-import platinum from "../assets/Batteries/PLATINUM 55530.jpg";
-import sebang from "../assets/Batteries/SEBANG.png";
-import tuflong from "../assets/Batteries/tuflong-battery-_1_.jpg";
-import vartaAGM from "../assets/Batteries/VARTA AGM.png";
-import vartaBlue from "../assets/Batteries/VARTA Blue.png";
-import vartaDynamic from "../assets/Batteries/VARTA Dynamic SLI.png";
+import amaron from "../assets/Batteries/Amaron-din661.webp";
+import fiamm from "../assets/Batteries/FIAMM-Titanium-Pro-L2X-64P_enl.webp";
+import platinum from "../assets/Batteries/PLATINUM 55530.webp";
+import sebang from "../assets/Batteries/SEBANG.webp";
+import tuflong from "../assets/Batteries/tuflong-battery-_1_.webp";
+import vartaAGM from "../assets/Batteries/VARTA AGM.webp";
+import vartaBlue from "../assets/Batteries/VARTA Blue.webp";
+import vartaDynamic from "../assets/Batteries/VARTA Dynamic SLI.webp";
 
 // ✅ On-call car battery services
 const services = [

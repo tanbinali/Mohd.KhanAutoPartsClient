@@ -8,7 +8,10 @@ import {
   FiShield,
   FiTruck,
 } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaWrench } from "react-icons/fa";
+import videoMp4 from "../assets/hero-video.mp4";
+import videoWebm from "../assets/hero-video.webm";
+import poster from "../assets/hero-poster.webp";
 
 const Hero = () => {
   const scrollToProducts = () => {
@@ -53,14 +56,18 @@ const Hero = () => {
         transition={{ duration: 1.2 }}
       >
         <video
-          src={video}
           autoPlay
           loop
           muted
+          playsInline
+          preload="metadata"
+          poster={poster}
           className="w-full h-full object-cover"
-          title="On-Site Car Battery Replacement Service in Abu Dhabi – Mohammad Khan"
-          aria-label="24/7 on-site car battery replacement and roadside assistance in Mussafah and Abu Dhabi"
-        />
+        >
+          <source src={videoWebm} type="video/webm" />
+          <source src={videoMp4} type="video/mp4" />
+        </video>
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
       </motion.div>
 
@@ -87,7 +94,7 @@ const Hero = () => {
         >
           Stranded with a dead battery? We provide fast, reliable, and
           affordable 24/7 on-site battery replacement, delivery, and roadside
-          assistance anywhere in Mussafah & Abu Dhabi.
+          assistance anywhere in Mussafah & Abu Dhabi near you.
         </motion.h2>
 
         {/* CTA Buttons */}
@@ -134,19 +141,23 @@ const Hero = () => {
             </span>
             <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
               <FiDollarSign className="w-6 h-6 text-accent" />
-              <span>Low Service Charges</span>
+              <span>Affordable Pricing</span>
             </span>
             <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
               <FiShield className="w-6 h-6 text-accent" />
-              <span>Warranty Provided</span>
+              <span>Guranteed Warranty</span>
             </span>
             <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
               <FiTruck className="w-6 h-6 text-accent" />
               <span>Fast Delivery</span>
             </span>
             <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
+              <FaWrench className="w-6 h-6 text-accent" />
+              <span>Skilled & Experienced Team</span>
+            </span>
+            <span className="flex items-center space-x-2 text-sm sm:text-base md:text-lg">
               <FiMap className="w-6 h-6 text-accent" />
-              <span>Mussafah, M6, Abu Dhabi, UAE</span>
+              <span>Located in Mussafah M6, Abu Dhabi</span>
             </span>
           </div>
 

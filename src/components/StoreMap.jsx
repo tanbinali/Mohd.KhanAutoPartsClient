@@ -84,6 +84,17 @@ const StoreMap = () => {
     url: "https://mohammadkhanautoparts.com",
     openingHours: ["Sat-Thu 08:00-22:00", "Fri 14:00-22:00"],
     areaServed: "Abu Dhabi and surrounding areas",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 24.3718366,
+      longitude: 54.5113709,
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.6",
+      reviewCount: "125",
+    },
+    sameAs: ["https://maps.app.goo.gl/vNQgDWz4rMwyttzt6"],
   };
 
   return (

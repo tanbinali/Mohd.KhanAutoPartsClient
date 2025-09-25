@@ -7,7 +7,7 @@ import {
   FiClock,
   FiMapPin,
 } from "react-icons/fi";
-import banner from "../assets/Banner.png";
+import banner from "../assets/Banner.webp";
 
 const AboutUs = () => {
   // Animation variants

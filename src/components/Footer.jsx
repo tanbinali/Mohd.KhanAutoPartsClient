@@ -15,8 +15,8 @@ const Footer = () => {
           className="w-10 h-10 object-contain mr-2"
         />
         <p>
-          Copyright © {new Date().getFullYear()} – Mohammad Khan Auto Parts. All
-          rights reserved.
+          Copyright © {new Date().getFullYear()} – Mohammad Khan Auto Parts
+          Trading Shop. All rights reserved.
         </p>
       </aside>
 
