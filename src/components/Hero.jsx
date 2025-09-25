@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import video from "../assets/hero-video.mp4";
 import {
   FiClock,
   FiDollarSign,
@@ -12,6 +11,7 @@ import { FaWhatsapp, FaWrench } from "react-icons/fa";
 import videoMp4 from "../assets/hero-video.mp4";
 import videoWebm from "../assets/hero-video.webm";
 import poster from "../assets/hero-poster.webp";
+import mobposter from "../assets/hero-poster-mobile.webp";
 
 const Hero = () => {
   const scrollToProducts = () => {
@@ -49,12 +49,15 @@ const Hero = () => {
       className="relative min-h-screen w-full overflow-visible py-20"
     >
       {/* Background Video */}
-      <motion.div
-        className="absolute inset-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
-      >
+      <div className="absolute inset-0">
+        {/* Mobile: show poster */}
+        <img
+          src={mobposter}
+          alt="Car battery assistance Abu Dhabi"
+          className="w-full h-full object-cover md:hidden"
+        />
+
+        {/* Desktop: show video */}
         <video
           autoPlay
           loop
@@ -62,14 +65,14 @@ const Hero = () => {
           playsInline
           preload="metadata"
           poster={poster}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hidden md:block"
         >
           <source src={videoWebm} type="video/webm" />
           <source src={videoMp4} type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
-      </motion.div>
+      </div>
 
       {/* Hero Content */}
       <motion.div

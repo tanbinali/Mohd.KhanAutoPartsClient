@@ -7,7 +7,9 @@ import {
   FiClock,
   FiMapPin,
 } from "react-icons/fi";
-import banner from "../assets/Banner.webp";
+import Banner500 from "../assets/Banner-500.webp";
+import Banner768 from "../assets/Banner-768.webp";
+import Banner1024 from "../assets/Banner-1024.webp";
 
 const AboutUs = () => {
   // Animation variants
@@ -75,7 +77,15 @@ const AboutUs = () => {
             viewport={{ once: true }}
           >
             <img
-              src={banner + "?w=500&format=webp"}
+              srcSet={`
+    ${Banner500} 500w,
+    ${Banner768} 768w,
+    ${Banner1024} 1024w
+  `}
+              sizes="(max-width: 640px) 100vw,
+         (max-width: 1024px) 50vw,
+         1024px"
+              src={Banner1024} // default/fallback
               alt="On-site car battery assistance Abu Dhabi - Mohammad Khan Auto Parts"
               loading="lazy"
               className="rounded-xl shadow-2xl w-full object-cover"
