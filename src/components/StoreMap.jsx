@@ -104,9 +104,10 @@ const StoreMap = () => {
       aria-label="Mohammad Khan Auto Parts Location and Store Information"
     >
       {/* Structured Data for SEO */}
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-72 bg-gradient-to-b from-primary/5 to-transparent -z-10"></div>

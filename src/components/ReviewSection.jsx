@@ -1,12 +1,33 @@
 import { motion } from "framer-motion";
 import { FiStar } from "react-icons/fi";
 
+// Helper: Convert ISO date → "x time ago"
+const timeAgo = (dateString) => {
+  const now = new Date();
+  const past = new Date(dateString);
+  const diff = now - past;
+
+  const seconds = Math.floor(diff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const months = Math.floor(days / 30);
+  const years = Math.floor(days / 365);
+
+  if (years > 0) return `${years} year${years > 1 ? "s" : ""} ago`;
+  if (months > 0) return `${months} month${months > 1 ? "s" : ""} ago`;
+  if (days > 0) return `${days} day${days > 1 ? "s" : ""} ago`;
+  if (hours > 0) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+  if (minutes > 0) return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
+  return "Just now";
+};
+
 const reviews = [
   {
     id: 1,
     name: "Muhammad Umar",
     rating: 5,
-    time: "2 years ago",
+    date: "2021-09-01", // ISO format
     text: "Excellent service and fast car battery replacement. The technicians were professional and replaced my Honda Accord battery on time.",
     response:
       "Thank you for your kind words! We're glad our team could assist with your Honda Accord battery.",
@@ -16,7 +37,7 @@ const reviews = [
     id: 2,
     name: "Muthasim Cherichi",
     rating: 5,
-    time: "2 years ago",
+    date: "2021-09-10",
     text: "Had a car battery replacement, they changed it quickly and even honored the warranty with no hassle.",
     response:
       "We appreciate your feedback! Standing by our warranty commitments is our promise.",
@@ -26,7 +47,7 @@ const reviews = [
     id: 3,
     name: "Ali Raza",
     rating: 5,
-    time: "1 month ago",
+    date: "2023-08-15",
     text: "Quick service and friendly staff. Highly recommend this shop for car batteries. The replacement is working perfectly.",
     response: null,
     avatar: "AR",
@@ -35,7 +56,7 @@ const reviews = [
     id: 4,
     name: "Ayesha Khan",
     rating: 4,
-    time: "3 months ago",
+    date: "2023-06-20",
     text: "Professional staff and affordable battery prices. The installation was done in minutes.",
     response:
       "Thank you for your feedback! We look forward to serving you again.",
@@ -44,10 +65,10 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
-  // Build JSON-LD structured data (Battery Store SEO)
+  // Build JSON-LD structured data
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Store",
+    "@type": "AutoPartsStore",
     name: "Mohammad Khan Car Battery Services",
     url: "https://mohammadkhanautoparts.com",
     description:
@@ -71,7 +92,12 @@ const ReviewsSection = () => {
         worstRating: "1",
       },
       reviewBody: r.text,
-      datePublished: r.time,
+      datePublished: r.date, // ✅ proper ISO date
+      itemReviewed: {
+        "@type": "AutoPartsStore",
+        name: "Mohammad Khan Car Battery Services",
+        url: "https://mohammadkhanautoparts.com",
+      },
     })),
   };
 
@@ -82,9 +108,10 @@ const ReviewsSection = () => {
       aria-label="Customer Reviews for Car Battery Replacement Abu Dhabi"
     >
       {/* Inject structured data for SEO */}
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
@@ -132,7 +159,9 @@ const ReviewsSection = () => {
                   >
                     {review.name}
                   </p>
-                  <p className="text-sm text-base-content/70">{review.time}</p>
+                  <p className="text-sm text-base-content/70">
+                    {timeAgo(review.date)}
+                  </p>
                 </div>
               </div>
 

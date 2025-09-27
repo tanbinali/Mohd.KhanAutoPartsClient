@@ -11,6 +11,23 @@ import Banner500 from "../assets/Banner-500.webp";
 import Banner768 from "../assets/Banner-768.webp";
 import Banner1024 from "../assets/Banner-1024.webp";
 
+// Structured data object
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  name: "Mohammad Khan Auto Parts",
+  serviceType: "On-Site Car Battery Replacement and Assistance",
+  image: "https://mohammadkhanautoparts.com/banner.png",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Abu Dhabi",
+    addressCountry: "AE",
+  },
+  openingHours: "Mo-Su 00:00-23:59",
+  telephone: "+971556939668",
+  url: "https://mohammadkhanautoparts.com",
+};
+
 const AboutUs = () => {
   // Animation variants
   const containerVariants = {
@@ -241,25 +258,10 @@ const AboutUs = () => {
       </div>
 
       {/* Structured Data */}
-      <script type="application/ld+json">
-        {`
-        {
-          "@context": "https://schema.org",
-          "@type": "AutoRepair",
-          "name": "Mohammad Khan Auto Parts",
-          "serviceType": "On-Site Car Battery Replacement and Assistance",
-          "image": "https://mohammadkhanautoparts.com/banner.png",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Abu Dhabi",
-            "addressCountry": "AE"
-          },
-          "openingHours": "Mo-Su 00:00-23:59",
-          "telephone": "+971556939668",
-          "url": "https://mohammadkhanautoparts.com"
-        }
-        `}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </section>
   );
 };

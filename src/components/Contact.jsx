@@ -2,6 +2,23 @@ import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
 
+// Structured data object
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  name: "Mohammad Khan Auto Parts",
+  serviceType: "On-Site Car Battery Replacement",
+  areaServed: "Abu Dhabi, UAE",
+  telephone: "+971556939668",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+971556939668",
+    contactType: "customer service",
+    availableLanguage: ["English", "Arabic"],
+  },
+  url: "https://mohammadkhanautoparts.com",
+};
+
 const Contact = () => {
   const contactMethods = [
     {
@@ -125,26 +142,11 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      {/* SEO Structured Data */}
-      <script type="application/ld+json">
-        {`
-        {
-          "@context": "https://schema.org",
-          "@type": "AutomotiveBusiness",
-          "name": "Mohammad Khan Auto Parts",
-          "serviceType": "On-Site Car Battery Replacement",
-          "areaServed": "Abu Dhabi, UAE",
-          "telephone": "+971556939668",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+971556939668",
-            "contactType": "customer service",
-            "availableLanguage": ["English", "Arabic"]
-          },
-          "url": "https://mohammadkhanautoparts.com"
-        }
-        `}
-      </script>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </section>
   );
 };
